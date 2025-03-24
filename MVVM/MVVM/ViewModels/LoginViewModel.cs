@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -46,20 +47,26 @@ namespace MVVM.ViewModels
 
             if (cliente != null)
             {
+                // Establecer el cliente activo
+                ClienteService.ClienteActivo = cliente;
+
                 await Application.Current.MainPage.DisplayAlert("Éxito", "Inicio de sesión exitoso. ¡Bienvenido!", "OK");
 
                 // Navegar a MainPage después de iniciar sesión
-                Application.Current.MainPage = new MainPage();
+                var mainPage = new MainPage();
+                Application.Current.MainPage = mainPage;
 
                 // Inicializar App.MasterD
-                App.MasterD = (MainPage)App.Current.MainPage;
+                App.MasterD = mainPage;
 
+                // Llamar a ActualizarClienteActivo en el MasterViewModel
+                var masterViewModel = (MasterViewModel)mainPage.Flyout.BindingContext;
+                masterViewModel.ActualizarClienteActivo();
             }
             else
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Correo o contraseña incorrectos.", "OK");
             }
-
         }
     }
 }
