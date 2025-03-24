@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.Master"
+             Title="Master"
+             BackgroundColor="Black">
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <!-- Logo y título -->
+        <Label Text="Turismo Verde"
+               FontSize="Large"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White"/>
+
+        <BoxView HeightRequest="2" BackgroundColor="White"/>
+
+        <!-- Menú -->
+        <Grid ColumnSpacing="15" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Source="home_icon.png" WidthRequest="30" HeightRequest="30"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="Inicio" x:Name="btnInicio" Clicked="btnInicio_Clicked" 
+                    BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+
+            <Image Grid.Row="1" Grid.Column="0" Source="nosotros_icon.png" WidthRequest="30" HeightRequest="30"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="Nosotros" x:Name="btnNosotros" Clicked="btnNosotros_Clicked" 
+                    BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+            <Image Grid.Row="2" Grid.Column="0" Source="contact_icon.png" WidthRequest="30" HeightRequest="30"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Contacto" x:Name="btnContacto" Clicked="btnContacto_Clicked"
+                    BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.Views.DetailPage"
+             BackgroundImageSource="fondo.png">
+
+    <Grid Padding="30">
+        <!-- Botón para abrir el menú -->
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+            <Button Text="☰" 
+                    FontSize="24" 
+                    BackgroundColor="Transparent" 
+                    TextColor="White"
+                    Command="{Binding OpenMenuCommand}" />
+        </StackLayout>
+
+        <!-- Contenido centrado -->
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="20">
+
+            <!-- Título con sombra -->
+            <Frame BackgroundColor="Transparent" HasShadow="False">
+                <Label Text="EXPLORA EL MUNDO CON TURISMO VERDE"
+                       TextColor="White"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       Padding="10"/>
+            </Frame>
+
+            <!-- Botón estilizado -->
+            <Button Text="Conócenos"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="25"
+                    Padding="15"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Command="{Binding NavigateToNosotrosCommand}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.NosotrosPage"
+             xmlns:local="clr-namespace:MVVM"
+             BackgroundImageSource="fondo.png">
+
+    <ContentPage.Content>
+        <Grid Padding="25">
+            <ScrollView>
+                <StackLayout Spacing="30">
+
+                    <!-- LOGO -->
+                    <Image Source="{local:ImageResource MVVM.Images.logo.png}" 
+                           HorizontalOptions="Center" 
+                           WidthRequest="200" 
+                           HeightRequest="200"/>
+
+                    <!-- CONTENEDOR PRINCIPAL -->
+                    <Frame BackgroundColor="Black" 
+                           Opacity="0.75" 
+                           Padding="20" 
+                           CornerRadius="15"
+                           HasShadow="True">
+                        <StackLayout Spacing="15">
+                            <Label Text="SOBRE NOSOTROS"
+                                   FontSize="26"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"/>
+
+                            <Label Text="En Turismo Verde, creemos en un turismo responsable que respete la naturaleza y las comunidades locales..."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label Text="Fundada por Matías Lázaro, Issac Chunga y Fredy Salinas, nuestra empresa nace de la pasión por explorar..."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <Label Text="Nos comprometemos a brindarte aventuras inolvidables, en armonía con la naturaleza y con un enfoque de sostenibilidad..."
+                                   FontSize="16"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

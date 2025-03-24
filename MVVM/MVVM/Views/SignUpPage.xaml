@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             BackgroundImageSource="{local:ImageResource MVVM.Images.fondo.png}"
+             x:Class="MVVM.Views.SignUpPage">
+
+    <ScrollView>
+        <StackLayout Padding="30" VerticalOptions="Center">
+            <Frame BackgroundColor="#AA000000" CornerRadius="10" Padding="20">
+                <StackLayout Spacing="15">
+
+                    <Label Text="Crear Cuenta" FontSize="28"
+                           HorizontalTextAlignment="Center" TextColor="White"/>
+
+                    <Entry Text="{Binding Nombre}" 
+                           Placeholder="Nombre" 
+                           PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Entry Text="{Binding ApellidoPaterno}" 
+                           Placeholder="Apellido Paterno" 
+                           PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Entry Text="{Binding ApellidoMaterno}" 
+                           Placeholder="Apellido Materno" 
+                           PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <DatePicker Date="{Binding FechaNacimiento}" 
+                                MaximumDate="{x:Static sys:DateTime.Today}" 
+                                TextColor="White"/>
+                    
+                    <Entry Text="{Binding Correo}" 
+                           Placeholder="Correo Electrónico" 
+                           Keyboard="Email" PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Entry Text="{Binding Telefono}" 
+                           Placeholder="Número de Teléfono"
+                           Keyboard="Telephone"
+                           PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Picker SelectedItem="{Binding Ciudad}" 
+                            Title="Selecciona tu Ciudad" 
+                            TextColor="White">
+                        
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Ciudad 1</x:String>
+                                <x:String>Ciudad 2</x:String>
+                                <x:String>Ciudad 3</x:String>
+                                <x:String>Ciudad 4</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    
+                    <Entry Text="{Binding Contraseña}" 
+                           Placeholder="Contraseña" 
+                           IsPassword="true" 
+                           PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Entry Text="{Binding ConfirmarContraseña}" 
+                           Placeholder="Confirmar Contraseña" 
+                           IsPassword="true" PlaceholderColor="LightGray" 
+                           TextColor="White"/>
+                    
+                    <Button Text="Registrar" BackgroundColor="#4CAF50"
+                    TextColor="White" CornerRadius="20"
+                    Command="{Binding SignUpCommand}"/>
+                    
+                    <Label Text="¿Ya tienes cuenta? Inicia sesión"
+                           FontSize="14" TextColor="#90CAF9"
+                           HorizontalTextAlignment="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_Login"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
