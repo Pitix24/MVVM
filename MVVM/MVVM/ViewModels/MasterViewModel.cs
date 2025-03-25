@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MVVM.Services;
 using MVVM.Views;
+using MVVM.Views.Plans;
 using Xamarin.Forms;
 
 namespace MVVM.ViewModels
@@ -15,16 +16,18 @@ namespace MVVM.ViewModels
         public ICommand NavigateToNosotrosCommand { get; }
         public ICommand NavigateToContactoCommand { get; }
         public ICommand NavigateToInicioCommand { get; }
+        public ICommand NavigateToPlanesCommand { get; }
         public ICommand LogoutCommand { get; }
 
 
         public MasterViewModel()
         {
+            ActualizarClienteActivo();
             NavigateToNosotrosCommand = new Command(async () => await NavigateToNosotros());
             NavigateToContactoCommand = new Command(async () => await NavigateToContacto());
             NavigateToInicioCommand = new Command(async () => await NavigateToInicio());
+            NavigateToPlanesCommand = new Command(async () => await NavigateToPlanes());
             LogoutCommand = new Command(CerrarSesion);
-            ActualizarClienteActivo();
         }
         public void ActualizarClienteActivo()
         {
@@ -67,6 +70,13 @@ namespace MVVM.ViewModels
         {
             App.MasterD.IsPresented = false;
             App.MasterD.Detail = new NavigationPage(new DetailPage());
+            await Task.CompletedTask;
+        }
+
+        private async Task NavigateToPlanes()
+        {
+            App.MasterD.IsPresented = false;
+            App.MasterD.Detail = new NavigationPage(new PlanListView());
             await Task.CompletedTask;
         }
 

@@ -9,7 +9,7 @@
 
         <!-- Información del usuario -->
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start">
-            <Image Source="user_icon.png" WidthRequest="50" HeightRequest="50" />
+            <Image Source="user.png" WidthRequest="50" HeightRequest="50" />
             <Label Text="{Binding UserName}" 
                FontSize="Medium" 
                TextColor="White" 
@@ -25,25 +25,30 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Row="0" Grid.Column="0" Source="home_icon.png" WidthRequest="30" HeightRequest="30"/>
+            <Image Grid.Row="0" Grid.Column="0" Source="home.png" WidthRequest="30" HeightRequest="30"/>
             <Button Grid.Row="0" Grid.Column="1" Text="Inicio" Command="{Binding NavigateToInicioCommand}" 
                 BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
 
-            <Image Grid.Row="1" Grid.Column="0" Source="nosotros_icon.png" WidthRequest="30" HeightRequest="30"/>
+            <Image Grid.Row="1" Grid.Column="0" Source="team.png" WidthRequest="30" HeightRequest="30"/>
             <Button Grid.Row="1" Grid.Column="1" Text="Nosotros" Command="{Binding NavigateToNosotrosCommand}" 
                 BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
 
-            <Image Grid.Row="2" Grid.Column="0" Source="contact_icon.png" WidthRequest="30" HeightRequest="30"/>
-            <Button Grid.Row="2" Grid.Column="1" Text="Contacto" Command="{Binding NavigateToContactoCommand}"
+            <Image Grid.Row="2" Grid.Column="0" Source="contacto.png" WidthRequest="30" HeightRequest="30"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="Planes" Command="{Binding NavigateToPlanesCommand}"
                 BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
 
-            <Button Grid.Row="3" Grid.ColumnSpan="2" Text="Cerrar Sesión" 
+            <Image Grid.Row="3" Grid.Column="0" Source="contacto.png" WidthRequest="30" HeightRequest="30"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="Contacto" Command="{Binding NavigateToContactoCommand}"
+                BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+
+            <Button Grid.Row="4" Grid.ColumnSpan="2" Text="Cerrar Sesión" 
                     Command="{Binding LogoutCommand}" 
                     BackgroundColor="Red" TextColor="White" FontAttributes="Bold" 
                     HorizontalOptions="Center" Padding="10"/>

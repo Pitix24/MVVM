@@ -6,6 +6,7 @@ namespace MVVM.Models
 {
     public class Cliente
     {
+        public int Id { get; set; } // Identificador único del cliente
         public string Nombre { get; set; }
         public string ApellidoPaterno { get; set; }
         public string ApellidoMaterno { get; set; }

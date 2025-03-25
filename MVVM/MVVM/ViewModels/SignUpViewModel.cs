@@ -52,7 +52,7 @@ namespace MVVM.ViewModels
                 return;
             }
 
-            if (Telefono.Length < 10 || !Telefono.All(char.IsDigit))
+            if (Telefono.Length == 9 || !Telefono.All(char.IsDigit))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Por favor, ingresa un número de teléfono válido.", "OK");
                 return;
@@ -73,6 +73,7 @@ namespace MVVM.ViewModels
             // Crear un nuevo cliente
             var nuevoCliente = new Cliente
             {
+                Id = GenerarNuevoId(), // Método para generar un nuevo ID
                 Nombre = Nombre,
                 ApellidoPaterno = ApellidoPaterno,
                 ApellidoMaterno = ApellidoMaterno,
@@ -91,5 +92,12 @@ namespace MVVM.ViewModels
             // Redirigir al usuario a la página de Login
             await Application.Current.MainPage.Navigation.PopAsync();
         }
+
+        // Método para generar un nuevo ID (puedes usar un contador o GUID)
+        private int GenerarNuevoId()
+        {
+            return ClienteService.ClientesRegistrados.Count + 1; // Simple contador
+        }
+
     }
 }
