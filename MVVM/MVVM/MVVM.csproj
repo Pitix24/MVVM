@@ -12,13 +12,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\contacto.png" />
     <None Remove="Images\fondo.png" />
+    <None Remove="Images\home.png" />
     <None Remove="Images\logo.png" />
+    <None Remove="Images\team.png" />
+    <None Remove="Images\user.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\contacto.png" />
     <EmbeddedResource Include="Images\fondo.png" />
+    <EmbeddedResource Include="Images\home.png" />
     <EmbeddedResource Include="Images\logo.png" />
+    <EmbeddedResource Include="Images\team.png" />
+    <EmbeddedResource Include="Images\user.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +52,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NosotrosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Plans\PlanDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Plans\PlanListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SignUpPage.xaml">

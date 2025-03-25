@@ -5,6 +5,15 @@
              BackgroundImageSource="fondo.png">
 
     <Grid Padding="30">
+        <!-- Botón para abrir el menú -->
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+            <Button Text="☰" 
+                    FontSize="24" 
+                    BackgroundColor="Transparent" 
+                    TextColor="White"
+                    Command="{Binding OpenMenuCommand}" />
+        </StackLayout>
+
         <!-- Contenido centrado -->
         <StackLayout VerticalOptions="CenterAndExpand" 
                      HorizontalOptions="CenterAndExpand"

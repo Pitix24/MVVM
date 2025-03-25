@@ -50,10 +50,10 @@
                         
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
-                                <x:String>Ciudad 1</x:String>
-                                <x:String>Ciudad 2</x:String>
-                                <x:String>Ciudad 3</x:String>
-                                <x:String>Ciudad 4</x:String>
+                                <x:String>LIMA</x:String>
+                                <x:String>TRUJILLO</x:String>
+                                <x:String>AREQUIPA</x:String>
+                                <x:String>CUZCO</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>

@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MVVM.Models;
 using MVVM.ViewModels;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVM
+namespace MVVM.Views.Plans
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NosotrosPage : ContentPage
+	public partial class PlanDetailPage : ContentPage
 	{
-		public NosotrosPage ()
+		public PlanDetailPage ()
 		{
-            InitializeComponent();
-            BindingContext = new NosotrosViewModel(); // Asegúrate de que este ViewModel esté definido
+			InitializeComponent ();
         }
     }
 }

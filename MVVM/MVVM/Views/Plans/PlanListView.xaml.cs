@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MVVM.ViewModels;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVM
+namespace MVVM.Views.Plans
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NosotrosPage : ContentPage
+	public partial class PlanListView : ContentPage
 	{
-		public NosotrosPage ()
+		public PlanListView ()
 		{
-            InitializeComponent();
-            BindingContext = new NosotrosViewModel(); // Asegúrate de que este ViewModel esté definido
+			InitializeComponent ();
+            BindingContext = new PlanViewModel(); // Asignar el ViewModel
         }
     }
 }

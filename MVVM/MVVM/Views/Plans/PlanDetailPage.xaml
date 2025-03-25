@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM.Views.Plans.PlanDetailPage"
+             Title="{Binding PlanSeleccionado.Nombre}">
+
+    <StackLayout Padding="20">
+        <Label Text="{Binding PlanSeleccionado.Descripcion}" FontSize="Medium" />
+        <Label Text="Puntos de Interés:" FontAttributes="Bold" />
+        <Label Text="{Binding PlanSeleccionado.PuntosDeInteres}" />
+        <Label Text="Días de Estadía: " />
+        <Label Text="{Binding PlanSeleccionado.DiasDeEstadia}" />
+        <Label Text="Costo por Persona: " />
+        <Label Text="{Binding PlanSeleccionado.CostoPorPersona}" />
+        <Label Text="Costo Paquete 2 Personas: " />
+        <Label Text="{Binding PlanSeleccionado.CostoPaquete2Personas}" />
+        <Label Text="Costo Paquete 4 Personas: " />
+        <Label Text="{Binding PlanSeleccionado.CostoPaquete4Personas}" />
+        <Label Text="Tareas:" FontAttributes="Bold" />
+        <Label Text="{Binding PlanSeleccionado.Tareas}" />
+        <Label Text="Rutinas y Eventos:" FontAttributes="Bold" />
+        <Label Text="{Binding PlanSeleccionado.RutinasYEventos}" />
+
+        <!-- Botón para reservar -->
+        <Button Text="Reservar" Command="{Binding PlanSeleccionado.ReservarCommand}" BackgroundColor="Green" TextColor="White" />
+
+    </StackLayout>
+
+</ContentPage>
